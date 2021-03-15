@@ -14,4 +14,8 @@ library(etude)
 
 `r etude::exercise_title()`      Start content here.
 
+What is the purpose of this package? 
 
+<!--answer-start-->
+To make exercises systematic.
+<!--answer-end-->

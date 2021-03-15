@@ -17,7 +17,9 @@ exs <- dir %>%
   etude_dir() %>%
   dplyr::mutate(
     exercise = file,
-    answers = FALSE, documentation = FALSE, name = "Problem 1: "
+    answers = TRUE, 
+    documentation = FALSE, 
+    name = "Problem 1: "
   ) %>%
   dplyr::filter(
     is.na(runtime)
