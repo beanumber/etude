@@ -1,0 +1,28 @@
+---
+title: "Etude test"
+author: "Ben Baumer"
+date: "3/15/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, message=FALSE}
+library(dplyr)
+library(etude)
+dir <- system.file("Examples", package = "etude")
+exs <- dir %>%
+  etude_dir() %>%
+  dplyr::mutate(
+    exercise = file,
+    answers = FALSE, documentation = FALSE, name = "Problem 1: "
+  ) %>%
+  dplyr::filter(
+    is.na(runtime)
+  )
+```
+
+
+`r etude_list(exs)`
