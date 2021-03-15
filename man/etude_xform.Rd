@@ -11,7 +11,9 @@ etude_xform(
   keep_ref = FALSE,
   prob_name = "Problem XX",
   package = "etude",
-  format = ifelse(knitr::is_latex_output(), "latex", "html")
+  format = ifelse(knitr::is_latex_output(), "latex", "html"),
+  latex_solution_start = "BLOCK-ANSWER-START",
+  latex_solution_end = "BLOCK-ANSWER-END"
 )
 }
 \arguments{

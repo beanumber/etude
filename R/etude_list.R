@@ -31,7 +31,9 @@ etude_list <- function(spec, keep_ref = FALSE) {
     Lines <-
       etude_xform(this$exercise, show_answer=this$answers,
                   verbose = this$documentation, prob_name = this$name,
-                  package = this$package, keep_ref = FALSE)
+                  package = this$package, keep_ref = FALSE,
+                  latex_solution_start = this$latex_solution_start,
+                  latex_solution_end = this$latex_solution_end)
     writeLines(Lines, con = "~/Downloads/foo.Rmd")
 
     contents <- knitr::knit_child("~/Downloads/foo.Rmd")

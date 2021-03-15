@@ -4,3 +4,5 @@ inst/doc
 .Rhistory
 doc
 Meta
+
+tests/testthat/*.html

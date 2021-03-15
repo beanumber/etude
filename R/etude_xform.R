@@ -29,7 +29,10 @@ etude_xform <- function(id, show_answer = getOption("show_exercise", TRUE),
                          keep_ref = FALSE,
                          prob_name = "Problem XX",
                          package = "etude",
-                         format = ifelse(knitr::is_latex_output(), "latex", "html")) {
+                         format = ifelse(knitr::is_latex_output(), "latex", "html"),
+                         latex_solution_start = "BLOCK-ANSWER-START",
+                         latex_solution_end = "BLOCK-ANSWER-END"
+                        ) {
 
   if (file.exists(id)) {
     fname <- id
@@ -87,11 +90,11 @@ etude_xform <- function(id, show_answer = getOption("show_exercise", TRUE),
                     content, perl = TRUE)
     content <- gsub(answer_start_pattern,
                     #"\\\\begin{quotation}\\\\em ",
-                    "BLOCK-ANSWER-START",
+                    latex_solution_start,
                     content)
     content <- gsub(answer_end_pattern,
                     #"\\\\end{quotation}",
-                    "BLOCK-ANSWER-END",
+                    latex_solution_end,
                     content)
   }  else if (format == "html") {
     content <- gsub("-A-([[:space:]]*)(.*)[$|\\n]",

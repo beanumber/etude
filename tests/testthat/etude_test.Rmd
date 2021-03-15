@@ -2,7 +2,10 @@
 title: "Etude test"
 author: "Ben Baumer"
 date: "3/15/2021"
-output: html_document
+output: 
+  pdf_document:
+    keep_tex: true
+    keep_md: true
 ---
 
 ```{r setup, include=FALSE}
@@ -19,11 +22,14 @@ exs <- dir %>%
     exercise = file,
     answers = TRUE, 
     documentation = FALSE, 
-    name = "Problem 1: "
+    name = "Problem 1: ",
+    latex_solution_start = "**SOLUTION:** \n", 
+    latex_solution_end = "---"
   ) %>%
   dplyr::filter(
     is.na(runtime)
-  )
+  ) %>%
+  dplyr::sample_n(2, replace = TRUE)
 ```
 
 

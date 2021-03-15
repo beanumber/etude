@@ -1,7 +1,7 @@
 Package: etude
 Type: Package
 Title: Utilities for Handling Textbook Exercises with Knitr
-Version: 0.3.0.9001
+Version: 0.3.0.9002
 Author: Daniel Kaplan
 Authors@R: c(
     person("Daniel", "Kaplan", email = "kaplan@macalester.edu", 
@@ -22,8 +22,12 @@ Imports:
     whoami,
     rstudioapi
 Suggests: 
+    testthat (>= 3.0.0),
     rmarkdown,
-    yaml
+    yaml,
+    dplyr,
+    fs,
 VignetteBuilder: knitr
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 Roxygen: list(markdown = TRUE)
+Config/testthat/edition: 3
